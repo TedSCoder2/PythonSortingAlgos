@@ -4,19 +4,7 @@ main function: bubble_sort(mylist)
 input: list of unsorted numbers
 output: list of sorted numbers
 '''
-
-# Returns true if mylist is list of numbers with length > 0
-# Otherwise returns False
-# Complexity: O(n)
-def valid_list(mylist):
-	if len(mylist) == 0:
-		return False
-
-	for item in mylist:
-		if type(item) != int:
-			return False
-
-	return True
+from SortPackage.SubPackage.validcheck import valid_list
 
 # Compares two elements in a list puts larger number to "next" 
 # index on the list and return back that list
@@ -28,7 +16,6 @@ def compare_two(mylist,curr,curr_next):
 		mylist[curr] = placeholder
 
 	return mylist
-
 
 # the main function
 def bubble_sort(mylist):
@@ -46,19 +33,4 @@ def bubble_sort(mylist):
 
 	return mylist
 
-# demo of the bubble_sort function
-from random import randint
-import time
-start_time = time.time()
 
-N = 10000
-mylist = []
-
-for x in range(0,N):
-	mylist.append(randint(0,50))
-
-mylist_sorted = bubble_sort(mylist)
-print(mylist)
-print(mylist_sorted)
-
-print("--- %s seconds ---" % (time.time() - start_time))
